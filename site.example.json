@@ -1,0 +1,59 @@
+{
+  "name": "Example Bakery",
+  "url": "https://bakery.example",
+  "organization": "Example Bakery LLC",
+  "description": "The agent of Example Bakery, a neighborhood bakery. Read-only: it answers questions, it never takes orders.",
+  "languages": ["en", "es"],
+  "contact": {
+    "email": "hello@bakery.example",
+    "booking_url": "https://bakery.example/order"
+  },
+  "assistant": {
+    "name": "Mia",
+    "max_words": 70,
+    "about": {
+      "en": "Example Bakery is a family bakery. We bake sourdough, pastries and custom cakes every morning. Open Tuesday to Sunday, 7 am to 3 pm. Pickup only, no delivery.",
+      "es": "Example Bakery es una panadería familiar. Horneamos masa madre, pastelería y tortas por encargo cada mañana. Abrimos de martes a domingo, de 7 a 15 h. Solo recojo en tienda, sin delivery."
+    },
+    "rules": [
+      {"en": "Custom cakes need at least 48 hours' notice; send people to the order page for them.",
+       "es": "Las tortas por encargo necesitan al menos 48 horas de anticipación; envíe a la gente a la página de pedidos."}
+    ]
+  },
+  "pricing_note": {
+    "en": "Prices are listed per item. Custom cakes are quoted after we see the design.",
+    "es": "Los precios son por producto. Las tortas por encargo se cotizan al ver el diseño."
+  },
+  "services": [
+    {"id": "sourdough", "name": {"en": "Sourdough loaf", "es": "Pan de masa madre"},
+     "description": {"en": "800 g, baked daily", "es": "800 g, horneado a diario"}, "price": "$9"},
+    {"id": "croissant", "name": {"en": "Butter croissant", "es": "Croissant de mantequilla"}, "price": "$4"},
+    {"id": "custom_cake", "name": {"en": "Custom cake", "es": "Torta por encargo"},
+     "timeline": {"en": "48 hours' notice", "es": "48 horas de anticipación"}}
+  ],
+  "docs": [
+    {"id": "allergens", "title": {"en": "Allergens", "es": "Alérgenos"},
+     "text": {"en": "Everything is made in a kitchen that handles wheat, eggs, milk and nuts.",
+              "es": "Todo se prepara en una cocina que usa trigo, huevo, leche y frutos secos."},
+     "url": "https://bakery.example/allergens"}
+  ],
+  "widget": {
+    "bubbleTitle": {"en": "Hi, I'm Mia!", "es": "¡Hola, soy Mia!"},
+    "bubble": {"en": "Ask me about today's bread or a custom cake.", "es": "Pregúntame por el pan de hoy o una torta por encargo."},
+    "greeting": {"en": "Hi! I'm Mia, Example Bakery's assistant. What can I help you with?",
+                 "es": "¡Hola! Soy Mia, la asistente de Example Bakery. ¿En qué te ayudo?"},
+    "status": {"en": "Example Bakery assistant · AI", "es": "Asistente de Example Bakery · IA"},
+    "privacy_url": {"en": "/privacy", "es": "/privacidad"},
+    "chips": [
+      [{"en": "Opening hours", "es": "Horario"}, {"en": "When are you open?", "es": "¿Qué horario tienen?"}],
+      [{"en": "Custom cake", "es": "Torta por encargo"}, {"en": "I'd like a custom cake.", "es": "Quisiera una torta por encargo."}],
+      [{"en": "Is my site agent-ready?", "es": "¿Mi web está lista para agentes?"},
+       {"en": "Can you check if my website is ready for AI agents?", "es": "¿Puedes revisar si mi web está lista para agentes de IA?"}]
+    ]
+  },
+  "features": {
+    "readiness_check": true,
+    "save_lead": true,
+    "identity": true
+  }
+}

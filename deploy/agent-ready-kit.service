@@ -1,0 +1,23 @@
+# /etc/systemd/system/agent-ready-kit.service
+# Secrets live in the env file (chmod 600), never in site.json or in this unit.
+[Unit]
+Description=agent-ready-kit (chat, MCP and A2A for one website)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=agentkit
+WorkingDirectory=/opt/agent-ready-kit
+EnvironmentFile=/etc/agent-ready-kit.env
+Environment=SITE_CONFIG=/opt/agent-ready-kit/site.json SITE_DB=/var/lib/agent-ready-kit/site.db TRUST_PROXY=1
+ExecStart=/usr/bin/python3 -I /opt/agent-ready-kit/server/app.py
+Restart=on-failure
+StateDirectory=agent-ready-kit
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/agent-ready-kit
+
+[Install]
+WantedBy=multi-user.target

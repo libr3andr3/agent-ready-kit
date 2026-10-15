@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Example Bakery</title>
+<meta name="description" content="Demo page for agent-ready-kit: a neighborhood bakery with a chat assistant, an MCP server and an A2A agent.">
+<link rel="stylesheet" href="/agent-kit/chat.css">
+<style>
+  body { font: 17px/1.5 system-ui, sans-serif; max-width: 640px; margin: 64px auto; padding: 0 16px; color: #1d1d1f; background: #fff; }
+  button { font: inherit; padding: 10px 16px; border-radius: 10px; border: 0; background: #0a2f6b; color: #fff; cursor: pointer; }
+  code { background: #f5f5f7; padding: 2px 6px; border-radius: 6px; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Bakery", "name": "Example Bakery", "url": "https://bakery.example",
+ "openingHours": "Tu-Su 07:00-15:00"}
+</script>
+</head>
+<body>
+  <h1>Example Bakery</h1>
+  <p>This page is the demo for <b>agent-ready-kit</b>. The bubble in the corner is the chat assistant; AI agents reach
+     the same business through <code>/mcp</code> and <code>/a2a</code>, and find them at
+     <code>/.well-known/agent-card.json</code> and <code>/.well-known/mcp.json</code>.</p>
+  <p><button type="button" data-chat="open" data-chat-en="When are you open?">Ask about opening hours</button></p>
+  <script src="/agent-kit/chat.js" defer></script>
+</body>
+</html>

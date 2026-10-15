@@ -1,0 +1,6 @@
+site.json
+data/
+__pycache__/
+*.pyc
+.env
+*.env

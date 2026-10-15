@@ -1,0 +1,16 @@
+# Your site keeps being served as it is; only the agent routes go to agent-ready-kit.
+example.com {
+	@agent path /api/chat /api/widget-config /api/health /mcp /a2a /identity /identity/* /agent-kit/* /.well-known/agent-card.json /.well-known/agent.json /.well-known/mcp.json
+	handle @agent {
+		request_body {
+			max_size 64KB
+		}
+		reverse_proxy 127.0.0.1:8146 {
+			header_up X-Real-IP {remote_host}
+		}
+	}
+	handle {
+		root * /var/www/example.com
+		file_server
+	}
+}
